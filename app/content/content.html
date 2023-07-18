@@ -1,0 +1,24 @@
+<main class="d-grid align-content-center justify-content-center mt-3">
+    <div ng-if="!loggedin" class="card p-5">
+        <form name="loginForm" novalidate>
+            <div class="input-group mb-3">
+                <input type="text" ng-model="user.email" ng-minlength="4" required class="form-control"
+                       placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input ng-model="user.password" required type="password" class="form-control" placeholder="password"
+                       aria-label="Password" aria-describedby="basic-addon2">
+            </div>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" ng-click="login()">Login</button>
+        </form>
+    </div>
+    <div ng-if="loggedin" class="card p-5">
+            <div class="input-group mb-3">
+                Hello {{user.name}}, my id is: {{user.id}}
+            </div>
+            <div class="input-group mb-3">
+                Time: {{time}}
+            </div>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" ng-click="logout()">Logout</button>
+    </div>
+</main>
